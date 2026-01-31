@@ -18,7 +18,7 @@ const differentiators = [
   },
   {
     title: 'Retention-first system',
-    description: 'Our system emphasizes learning with retention, not short-term cramming.',
+    description: 'Our spiral revision emphasizes learning with retention, not short-term cramming.',
   },
 ]
 
@@ -64,7 +64,7 @@ export default function SpecialFeaturesSection() {
           </p>
           <p className="section-highlight">
             <strong>
-              At Mentora, we don’t believe that more hours, bigger batches, or faster syllabi create toppers.
+              At Mentora, we don’t believe that long hours, bigger batches, or faster syllabi create toppers.
               What creates results is clarity, consistency, and personal guidance—and that’s where we stand apart.
             </strong>
           </p>

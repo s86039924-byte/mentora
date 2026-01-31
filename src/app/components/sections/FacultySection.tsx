@@ -16,52 +16,52 @@ const facultyRoster: Record<'jee' | 'neet', FacultyMember[]> = {
     {
       name: 'Rajkumar Somani',
       subject: 'Physics Faculty',
-      description: 'B.Tech, IIT Kharagpur | 10+ Yrs Exp. (Ex-Allen & FIITJEE)',
+      description: 'B.Tech, IIT Kharagpur | 10+ Yrs Exp.',
       image: '/images/JEE/Rajkumar somani.png',
       details:
-        'An IIT Kharagpur alumnus, Rajkumar sir brings a decade of elite experience from both Allen (SBR) and FIITJEE. He has shaped thousands of IITians by rejecting the passive lecture model. His workshop approach ensures students actively participate in problem-solving, building the confidence and analytical skills needed to conquer JEE Physics.',
+        'An IIT Kharagpur alumnus, Rajkumar sir brings a decade of elite experience from different coachings institutes . He has shaped thousands of IITians by rejecting the passive lecture model. His workshop approach ensures students actively participate in problem-solving, building the confidence and analytical skills needed to conquer JEE Physics.',
     },
     {
       name: 'Tarun Garg',
       subject: 'Mathematics Faculty',
-      description: 'B.Tech + M.Tech, IIT Dhanbad | 12 Yrs Exp. (Ex-Allen Coordinator, Maninagar)',
+      description: 'B.Tech + M.Tech, IIT Dhanbad | 12 Yrs Exp.',
       image: '/images/JEE/tarun gerg.png',
       details:
-        'A rare blend of an IITian\'s sharp logic and a seasoned academic leader\'s empathy. As a former Center Coordinator at Allen (Maninagar), Tarun sir understands why students get lost in the crowd. He is a master at identifying the root of a student\'s doubt and co-founded Mentaraa to create a system that solves it personally.',
+        'A rare blend of an IITian\'s sharp logic and a seasoned academic leader\'s empathy. Tarun sir understands why students get lost in the crowd. He is a master at identifying the root of a student\'s doubt and co-founded Mentora to create a system that solves it personally.',
     },
     {
       name: 'Anmol Bhandari',
       subject: 'Chemistry Faculty',
-      description: 'B.Tech, NIT Jaipur | 7 Yrs Exp. (Ex-Allen & Olympiad Specialist)',
+      description: 'B.Tech, NIT Jaipur | 7 Yrs Exp. (Olympiad Specialist)',
       image: '/images/JEE/Anmol Bhandari.png',
       details:
-        'An NIT Jaipur graduate and an Olympiad specialist, Anmol sir\'s passion is for building true conceptual understanding, not just "tricks." His experience at Allen and in training Chemistry Olympiad ranks makes him a master of guiding students from foundational concepts to elite-level problem-solving, a core pillar of the Mentaraa philosophy.',
+        'An NIT Jaipur graduate and an Olympiad specialist, Anmol sir\'s passion is for building true conceptual understanding, not just "tricks." His experience in reputed coachings  and in training Chemistry Olympiad ranks makes him a master of guiding students from foundational concepts to elite-level problem-solving, a core pillar of the Mentora philosophy.',
     },
   ],
   neet: [
     {
       name: 'Deepak Prakash',
       subject: 'Biology Faculty',
-      description: 'B.Pharma, SBS University | 12 Yrs Exp. (Ex-Allen)',
+      description: 'B.Pharma, SBS University | 12 Yrs Exp.',
       image: '/images/NEET/Deepak Prakash.png',
       details:
-        'The mentor behind "perfect scores." Deepak sir\'s track record is a testament to the Mentaraa method: five consecutive years of mentoring students to a perfect 360/360 in NEET Biology. He has guided over 100 students to AIIMS (Delhi, Jodhpur, etc.) and BJ Medical College by focusing on deep conceptual mastery, not just rote memorization.',
+        'The mentor behind "perfect scores." Deepak sir\'s track record is a testament to the Mentora method: five consecutive years of mentoring students to a perfect 360/360 in NEET Biology. He has guided over 100 students to AIIMS (Delhi, Jodhpur, etc.) and BJ Medical College by focusing on deep conceptual mastery, not just rote memorization.',
     },
     {
       name: 'Satyam Goyal',
       subject: 'Chemistry Faculty',
-      description: 'B.Tech, RGPV | 7 Yrs Exp. (Ex-Allen)',
+      description: 'B.Tech, RGPV | 7 Yrs Exp.',
       image: '/images/NEET/satyam goyal.png',
       details:
-        'A specialist in all three branches of Chemistry and a former Subject Head at Allen (Maninagar), Satyam sir has an inside-out understanding of competitive curriculum design and its flaws. He has mentored numerous students to top their dream universities and medical colleges. At Mentaraa, he applies his expertise to ensure our cyclical curriculum builds mastery, not burnout.',
+        'A specialist in all three branches of Chemistry , Satyam sir has an inside-out understanding of competitive curriculum design and its flaws. He has mentored numerous students to top their dream universities and medical colleges. At Mentaraa, he applies his expertise to ensure our cyclical curriculum builds mastery, not burnout.',
     },
     {
       name: 'Preet Jain',
       subject: 'Physics Faculty',
-      description: 'B.Tech + M.Tech (Gold Medalist), IIT Dhanbad | 12 Yrs Exp. (Ex-Allen Coordinator, Maninagar)',
+      description: 'B.Tech + M.Tech (Gold Medalist), IIT Dhanbad | 12 Yrs Exp.',
       image: '/images/NEET/preet jain.png',
       details:
-        'As a Gold Medalist from IIT and a former HOD at Allen (Maninagar), Preet sir is one of the most respected physics mentors in the country. He has guided over 200 students to top IITs and AIIMS. He left the "factory" model he once led to build Mentaraa\'s "Active Practice" pedagogy, where he personally ensures students learn to solve problems themselves.',
+        'As a Gold Medalist from IIT , Preet sir is one of the most respected physics mentors in the country. He has guided over 200 students to top IITs and AIIMS. He left the "factory" model he once led to build Mentora\'s "Active Practice" pedagogy, where he personally ensures students learn to solve problems themselves.',
     },
   ],
 };
@@ -207,3 +207,7 @@ export default function FacultySection() {
     </section>
   );
 }
+
+
+
+

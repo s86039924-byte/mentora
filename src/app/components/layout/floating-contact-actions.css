@@ -1,0 +1,97 @@
+.contact-floating-actions {
+  position: fixed;
+  top: 50%;
+  right: clamp(14px, 2vw, 28px);
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+  z-index: 30;
+}
+
+.floating-action {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 999px;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 18px 32px rgba(15, 23, 42, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-action__icon {
+  position: relative;
+  width: 28px;
+  height: 28px;
+}
+.floating-action__label {
+  position: absolute;
+  right: calc(100% + 12px);
+  white-space: nowrap;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0b1730;
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.25);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.floating-action:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 40px rgba(15, 23, 42, 0.3);
+}
+
+.floating-action:hover .floating-action__label {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.floating-action--whatsapp {
+  color: #25d366;
+}
+
+.floating-action--call {
+  color: #0ea5e9;
+}
+
+.floating-action--whatsapp .floating-action__label,
+.floating-action--call .floating-action__label {
+  background: #fff;
+}
+
+html[data-theme='dark'] .floating-action {
+  background: rgba(15, 23, 42, 0.85);
+  box-shadow: 0 18px 32px rgba(0, 0, 0, 0.45);
+}
+
+html[data-theme='dark'] .floating-action__label {
+  background: rgba(15, 23, 42, 0.85);
+  color: #e2e8f0;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 960px) {
+  .contact-floating-actions {
+    right: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-floating-actions {
+    top: auto;
+    bottom: 24px;
+    transform: none;
+  }
+}

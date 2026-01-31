@@ -3,7 +3,7 @@
 import './contact.css';
 
 const formUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLSc99Uh20hAO9mb2kyoRZGNzfSBRJLp_K4LdK9Vi1lknVRX_FA/viewform?usp=sharing&ouid=109109604170305733892';
+  'https://docs.google.com/forms/d/e/1FAIpQLSe_tHYpkMLOvwU5NZcS35bPc0nFOVLHk5Eg0YuQe779WcW8Hw/viewform?usp=sharing&ouid=109109604170305733892';
 
 const contactChannels = [
   {
@@ -20,7 +20,7 @@ const contactChannels = [
   {
     title: 'Talk on WhatsApp',
     description:
-      'Chat instantly with the Vidya Bhumi team for quick clarifications about admission test, batches or results.',
+      'Chat instantly with the MENTORA team for quick clarifications about admission test, batches or results.',
     action: { label: 'Message on WhatsApp', href: 'https://wa.me/917569235450', external: true },
     meta: '7569235450 | 9328386289 · Available 10 AM – 8 PM',
   },
@@ -39,7 +39,7 @@ export default function ContactPage() {
       <section className="contact-hero">
         <div className="container">
           <p className="contact-eyebrow">Need help choosing the right path?</p>
-          <h1>Speak with the Vidya Bhumi team</h1>
+          <h1>Speak with the MENTORA  team</h1>
           <p className="contact-lede">
             Parents and students can book a counselling call, chat on WhatsApp or drop us an email.
             We respond quickly so you can make confident decisions about Boards, JEE and NEET prep.
