@@ -68,7 +68,6 @@ export default function AboutSection() {
             <ul>
               <li>Focused 75-minute sessions maintain attention and conceptual clarity.</li>
               <li>A spiral revision approach ensures concepts are revisited, strengthened, and retained over time.</li>
-              <li>Lecture recordings act as a safety net, so students never fall behind due to absence or doubt.</li>
             </ul>
           </motion.div>
 
