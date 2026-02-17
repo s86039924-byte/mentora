@@ -1,0 +1,232 @@
+/* ===== GALLERY SECTION ===== */
+
+/* Gallery section background */
+.gallery {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(130%);
+    padding-block: 80px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+html[data-theme='dark'] .gallery {
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: saturate(140%);
+}
+
+
+.gallery-videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    margin-bottom: 60px;
+    width: 100%;
+    max-width: 1100px;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(11, 31, 59, 0.2);
+    background: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
+/* Vertical videos inherit the 16:9 height on desktop to match the horizontal one */
+.video-wrapper.vertical {
+    padding-bottom: 56.25%;
+}
+
+@media (max-width: 768px) {
+
+    /* Taller aspect ratio for mobile-captured (vertical) videos when stacked */
+    .video-wrapper.vertical {
+        padding-bottom: 125%;
+        /* 4:5 Aspect Ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-wrapper.vertical {
+        padding-bottom: 177.77%;
+        /* 9:16 Aspect Ratio for mobile shorts style */
+    }
+}
+
+.gallery-simple-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.gallery-card-simple {
+    border-radius: 20px;
+    padding: 32px 24px;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(11, 31, 59, 0.15);
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-card-simple:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 45px rgba(11, 31, 59, 0.25);
+}
+
+.gallery-card-simple::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+    z-index: 0;
+}
+
+.gallery-card-simple__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-card-simple__caption {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.gallery-placeholder {
+    margin: 32px auto;
+    text-align: center;
+    color: rgba(15, 23, 42, 0.7);
+    font-size: 1.1rem;
+    max-width: 720px;
+}
+
+/* Gallery section background and positioning */
+.gallery {
+    position: relative;
+    overflow: hidden;
+    background: rgba(249, 250, 251, 0.9);
+}
+
+/* Common wrapper for subject shapes */
+.gallery .acad-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Background overlay via ::before */
+.gallery::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Make gallery section let the global animated background show through */
+.gallery {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: saturate(130%);
+    position: relative;
+    z-index: 1;
+}
+
+/* Dark mode: slightly more see-through, on slate */
+html[data-theme='dark'] .gallery {
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: saturate(140%);
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1024px) {
+    .gallery-card.large {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        padding-block: 60px 40px;
+    }
+
+    .gallery-videos {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        margin-bottom: 40px;
+    }
+
+    .gallery-simple-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .video-wrapper {
+        border-radius: 12px;
+    }
+
+    /* Stop clipping background shapes */
+    .gallery {
+        overflow: visible;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 120px;
+        gap: var(--space-16);
+    }
+
+    .gallery-card.large,
+    .gallery-card.medium,
+    .gallery-card.small {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+}
+
+/* ===== MOBILE VISIBILITY FIX FOR BACKGROUND ANIMATIONS ===== */
+@media (max-width: 768px) {
+
+    /* Make section backgrounds slightly translucent on mobile so bg is visible */
+    html[data-theme='light'] .gallery {
+        background: rgba(249, 250, 251, 0.92);
+    }
+
+    html[data-theme='dark'] .gallery {
+        background: rgba(15, 23, 42, 0.6);
+    }
+}

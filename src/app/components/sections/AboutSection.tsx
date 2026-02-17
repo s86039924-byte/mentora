@@ -1,5 +1,6 @@
 'use client';
 
+import './AboutSection.css';
 import React from 'react';
 import { motion } from 'framer-motion';
 
@@ -67,7 +68,9 @@ export default function AboutSection() {
             </p>
             <ul>
               <li>Focused 75-minute sessions maintain attention and conceptual clarity.</li>
-              <li>A spiral revision approach ensures concepts are revisited, strengthened, and retained over time.</li>
+              <li>A spiral revision approach ensures concepts are revisited strengthened and retained over time.</li>
+              <li>Extended availability of faculty for doubt solving.</li>
+              <li>5 days a week classes and biweekly test.</li>
             </ul>
           </motion.div>
 

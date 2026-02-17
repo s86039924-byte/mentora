@@ -9,6 +9,7 @@ import VantaBackground from './components/animations/VantaBackground'
 import StemOverlay from './components/animations/StemOverlay'
 import ScrollManager from './components/layout/ScrollManager'
 import FloatingContactActions from './components/layout/FloatingContactActions'
+import Footer from './components/layout/Footer'
 
 import Script from 'next/script'
 
@@ -77,6 +78,7 @@ export default function RootLayout({
 
         <main className="page">{children}</main>
         <FloatingContactActions />
+        <Footer />
       </body>
     </html>
   )

@@ -22,7 +22,7 @@ const contactChannels = [
     description:
       'Chat instantly with the MENTORA team for quick clarifications about admission test, batches or results.',
     action: { label: 'Message on WhatsApp', href: 'https://wa.me/917569235450', external: true },
-    meta: '7569235450 | 9328386289 · Available 10 AM – 8 PM',
+    meta: '7569235450 | 80032 54973 · Available 10 AM – 8 PM',
   },
   {
     title: 'Email Us',

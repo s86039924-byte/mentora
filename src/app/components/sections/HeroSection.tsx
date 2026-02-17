@@ -1,7 +1,10 @@
 'use client';
 
+import './HeroSection.css';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { LOGO } from '@/lib/constants';
 
 type HeroFormData = {
   name: string;
@@ -23,35 +26,28 @@ const containerVariants = {
 };
 
 const titleVariants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8 },
-  },
-};
-
-const wordVariants = {
-  hidden: { opacity: 0, y: 22, filter: 'blur(10px)' },
-  visible: {
-    opacity: 1,
-    y: 0,
-    filter: 'blur(0px)',
-    transition: { duration: 0.65 },
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut' as const,
+    },
   },
 };
 
 const subtitleVariants = {
-  hidden: { opacity: 0, y: 18 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.75 },
+    transition: { duration: 0.75, ease: 'easeOut' },
   },
 };
 
 const bodyVariants = {
-  hidden: { opacity: 0, y: 12 },
+  hidden: { opacity: 0, y: 15 },
   visible: {
     opacity: 1,
     y: 0,
@@ -69,7 +65,7 @@ const listItemVariants = {
 };
 
 export default function HeroSection() {
- 
+
 
   const [formData, setFormData] = useState<HeroFormData>({
     name: '',
@@ -138,131 +134,59 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
         >
-          <motion.h1 id="hero-heading" className="hero-title hero-title--inline" variants={titleVariants}>
+          <motion.div
+            className="hero-logo-container"
+            variants={titleVariants}
+          >
+            <Image
+              src={LOGO}
+              alt="Mentora Logo"
+              width={120}
+              height={120}
+              className="hero-logo"
+              priority
+              quality={100}
+              unoptimized
+            />
+          </motion.div>
+
+          <motion.h1 id="hero-heading" className="hero-heading hero-title--inline" variants={titleVariants}>
             <span className="hero-title__brand">MENTORA</span>
-            <span className="hero-title__tagline">Where dreams find true mentors.</span>
+            <span className="hero-title__tagline">Proven track record of Faculty</span>
             <span className="hero-title__highlight">
-              100+ Students placed in IITs &amp; NITs<br />
-              <br></br>
-              250+ Students in Govt. Medical Colleges
+              A premier institute for IIT-JEE and NEET.
             </span>
           </motion.h1>
+
+          <motion.div className="hero-cta-container" variants={bodyVariants}>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSe_tHYpkMLOvwU5NZcS35bPc0nFOVLHk5Eg0YuQe779WcW8Hw/viewform?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
+              className="hero-msat-btn"
+            >
+              Apply for MSAT
+              <span className="btn-glow-effect"></span>
+            </a>
+          </motion.div>
+
 
         </motion.div>
 
         <motion.div
-          className="hero-form-container"
+          className="hero-image-container"
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.85, delay: 0.3 }}
         >
-          <form className="hero-form" onSubmit={handleSubmit} noValidate>
-            <div className="hero-form-badge">
-              <span role="img" aria-label="gift">
-                🎁
-              </span>{' '}
-              GET 20% OFF ON YOUR FIRST BATCH!
-            </div>
-            <div className="hero-form-title">Quick Enrollment</div>
-            <div className="hero-form-subtitle">Join our community of achievers</div>
-
-            <div className="hero-form-group">
-              <label htmlFor="hero-name">YOUR NAME</label>
-              <input
-                id="hero-name"
-                type="text"
-                placeholder="Enter your name"
-                value={formData.name}
-                onChange={handleChange('name')}
-                required
-              />
-            </div>
-
-            <div className="hero-form-group">
-              <label htmlFor="hero-email">EMAIL ID</label>
-              <input
-                id="hero-email"
-                type="email"
-                placeholder="your@email.com"
-                value={formData.email}
-                onChange={handleChange('email')}
-                required
-              />
-            </div>
-
-            <div className="hero-form-group">
-              <label htmlFor="hero-mobile">MOBILE NUMBER</label>
-              <input
-                id="hero-mobile"
-                type="tel"
-                placeholder="10-digit number"
-                value={formData.mobile}
-                onChange={handleChange('mobile')}
-                required
-              />
-            </div>
-
-            <div className="hero-form-group">
-              <label htmlFor="hero-class">CLASS</label>
-              <div className="hero-form-select-wrapper">
-                <select
-                  id="hero-class"
-                  className="hero-form-select"
-                  value={formData.class}
-                  onChange={handleChange('class')}
-                  required
-                >
-                  <option value="">Select Class</option>
-                  <option value="9">9th Grade</option>
-                  <option value="10">10th Grade</option>
-                  <option value="11">11th Grade</option>
-                  <option value="12">12th Grade</option>
-                  <option value="jee">JEE Aspirant</option>
-                  <option value="neet">NEET Aspirant</option>
-                </select>
-              </div>
-            </div>
-
-            <div className="hero-form-group hero-form-batch">
-              <label htmlFor="hero-batch">PREFERRED BATCH</label>
-              <div className="hero-form-select-wrapper">
-                <select
-                  id="hero-batch"
-                  className="hero-form-select"
-                  value={formData.batch}
-                  onChange={handleChange('batch')}
-                  required
-                >
-                  <option value="">Select Batch</option>
-                  <option value="ignite">Ignite Program (For class IX)</option>
-                  <option value="catalyst">Catalyst Program (For class X)</option>
-                  <option value="pinnacle-rise">Pinnacle-Rise Program (For class XI)</option>
-                  <option value="pinnacle-apex">Pinnacle-Apex Program (For class XII)</option>
-                  <option value="phoenix">Phoenix Program (For reappearing students)</option>
-                </select>
-              </div>
-            </div>
-
-            <button type="submit" className="hero-form-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'Submitting...' : 'Apply Now'}
-            </button>
-
-            {isSubmitting && (
-              <p className="hero-form-sending" role="status">
-                Sending your request… this may take a moment.
-              </p>
-            )}
-
-            <p className="hero-form-note">
-              ✓ Expert guidance • ✓ Free assessment • ✓ Personalized roadmap
-            </p>
-
-            {statusMessage && (
-              <p className="hero-form-status" aria-live="polite">
-                {statusMessage}
-              </p>
-            )}
-          </form>
+          <Image
+            src="/logo/home.png"
+            alt="Mentora Hero"
+            width={600}
+            height={600}
+            className="hero-image"
+            priority
+          />
         </motion.div>
       </div>
     </section>

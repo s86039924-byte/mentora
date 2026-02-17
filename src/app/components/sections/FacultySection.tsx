@@ -1,6 +1,7 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import './FacultySection.css';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 type FacultyMember = {
@@ -19,7 +20,7 @@ const facultyRoster: Record<'jee' | 'neet', FacultyMember[]> = {
       description: 'B.Tech, IIT Kharagpur | 10+ Yrs Exp.',
       image: '/images/JEE/Rajkumar somani.png',
       details:
-        ' * An IIT Kharagpur alumnus, Rajkumar sir brings a decade of elite experience. He has shaped thousands of IITians by rejecting the passive lecture model. His "workshop" approach ensures students actively participate in problem-solving, building the confidence and analytical skills needed to conquer JEE Physics.',
+        'An IIT Kharagpur alumnus Rajkumar sir brings a decade of elite experience. He has shaped thousands of IITians by rejecting the passive lecture model. His "workshop" approach ensures students actively participate in problem-solving building the confidence and analytical skills needed to conquer JEE Physics.',
     },
     {
       name: 'Tarun Garg',
@@ -35,7 +36,7 @@ const facultyRoster: Record<'jee' | 'neet', FacultyMember[]> = {
       description: 'B.Tech, NIT Jaipur | 7 Yrs Exp. (Olympiad Specialist)',
       image: '/images/JEE/Anmol Bhandari.png',
       details:
-        '* An NIT Jaipur graduate and an Olympiad specialist. Anmol sir\'s passion is for building true conceptual understanding, not just "tricks". His experience in training Chemistry Olympiad ranks makes him a master of guiding students from foundational concepts to elite-level problem-solving, a core pillar of the Mentora philosophy.',
+        'An NIT Jaipur graduate and an Olympiad specialist. Anmol sir\'s passion is for building true conceptual understanding not just "tricks". His experience in training Chemistry Olympiad ranks makes him a master of guiding students from foundational concepts to elite-level problem-solving a core pillar of the Mentora philosophy.',
     },
   ],
   neet: [
@@ -45,7 +46,7 @@ const facultyRoster: Record<'jee' | 'neet', FacultyMember[]> = {
       description: 'B.Pharma, SBS University | 12 Yrs Exp.',
       image: '/images/NEET/Deepak Prakash.png',
       details:
-        ' The mentor behind "perfect scores". Deepak sir\'s track record is a testament to the Mentora method: five consecutive years of mentoring students to a perfect 360/360 in NEET Biology. He has guided over 100 students to AIIMS (Delhi, Jodhpur, etc.) and BJ Medical College by focusing on deep conceptual mastery, not just rote memorization.',
+        'The mentor behind "perfect scores". Deepak sir\'s track record is a testament to the Mentora method: five consecutive years of mentoring students to a perfect 360/360 in NEET Biology. He has guided over 100 students to AIIMS (Delhi Jodhpur etc.) and BJ Medical College by focusing on deep conceptual mastery not just rote memorization.',
     },
     {
       name: 'Satyam Goyal',
@@ -53,7 +54,7 @@ const facultyRoster: Record<'jee' | 'neet', FacultyMember[]> = {
       description: 'B.Tech, RGPV | 7 Yrs Exp.',
       image: '/images/NEET/satyam goyal.png',
       details:
-        ' A specialist in all three branches of Chemistry. Satyam sir has an inside-out understanding of competitive curriculum design and its flaws. He has mentored over many students to top their dream universities and medical colleges. At Mentora, he applies his expertise to ensure our cyclical curriculum builds mastery, not burnout.',
+        'A specialist in all three branches of Chemistry. Satyam sir has an inside-out understanding of competitive curriculum design and its flaws. He has mentored over many students to top their dream universities and medical colleges. At Mentora he applies his expertise to ensure our cyclical curriculum builds mastery not burnout.',
     },
     {
       name: 'Preet Jain',
@@ -61,7 +62,7 @@ const facultyRoster: Record<'jee' | 'neet', FacultyMember[]> = {
       description: 'B.Tech + M.Tech (Gold Medalist), IIT Dhanbad | 12 Yrs Exp.',
       image: '/images/NEET/preet jain.png',
       details:
-        ' As a Gold Medalist from IIT, Preet sir is one of the most respected physics mentors in the country. He has guided over 200 students to top IITs and AIIMS. He left the "factory" model to build Mentora\'s "Active Practice" pedagogy, where he personally ensures students learn to solve problems themselves.',
+        'As a Gold Medalist from IIT Preet sir is one of the most respected physics mentors in the country. He has guided over 200 students to top IITs and AIIMS. He left the "factory" model to build Mentora\'s "Active Practice" pedagogy where he personally ensures students learn to solve problems themselves.',
     },
   ],
 };
@@ -92,9 +93,8 @@ const cardVariants = {
 };
 
 export default function FacultySection() {
-  const [selectedStream, setSelectedStream] = useState<'jee' | 'neet'>('jee');
-
-  const activeFaculty = facultyRoster[selectedStream];
+  // Combine all faculty members
+  const allFaculty = [...facultyRoster.jee, ...facultyRoster.neet];
   const [selectedFaculty, setSelectedFaculty] = useState<FacultyMember | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -132,20 +132,6 @@ export default function FacultySection() {
         >
           <h2>Meet Our Expert Faculty</h2>
           <p>Subject specialists with proven teaching excellence and competitive exam expertise</p>
-          <div className="faculty-tabs">
-            <button
-              className={`tab-button faculty-tab ${selectedStream === 'jee' ? 'active' : ''}`}
-              onClick={() => setSelectedStream('jee')}
-            >
-              JEE Experts
-            </button>
-            <button
-              className={`tab-button faculty-tab ${selectedStream === 'neet' ? 'active' : ''}`}
-              onClick={() => setSelectedStream('neet')}
-            >
-              NEET Experts
-            </button>
-          </div>
         </motion.div>
 
         <motion.div
@@ -155,21 +141,22 @@ export default function FacultySection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          {activeFaculty.map((teacher, index) => (
+          {allFaculty.map((teacher, index) => (
             <motion.div
-              key={`${selectedStream}-${index}`}
+              key={`faculty-${index}`}
               className="faculty-card"
               variants={cardVariants}
               whileHover="hover"
             >
-              <div className="faculty-index">{index + 1}</div>
-              <div className="faculty-photo">
-                <img src={teacher.image} alt={teacher.name} loading="lazy" />
+              <div className="faculty-card__photo-wrap">
+                <img className="faculty-card__photo" src={teacher.image} alt={teacher.name} loading="lazy" />
               </div>
-              <h3 className="faculty-name">{teacher.name}</h3>
-              <div className="faculty-accent"></div>
-              <p className="faculty-subject">{teacher.subject}</p>
-              <p className="faculty-bio">{teacher.description}</p>
+              <div className="faculty-card__body">
+                <h3 className="faculty-card__name">{teacher.name}</h3>
+                <div className="faculty-accent"></div>
+                <p className="faculty-card__role">{teacher.subject}</p>
+                <p className="faculty-card__highlights">{teacher.description}</p>
+              </div>
               <button
                 type="button"
                 className="faculty-card__cta"
