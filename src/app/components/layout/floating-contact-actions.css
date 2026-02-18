@@ -29,6 +29,7 @@
   width: 28px;
   height: 28px;
 }
+
 .floating-action__label {
   position: absolute;
   right: calc(100% + 12px);
@@ -72,7 +73,8 @@
 }
 
 html[data-theme='dark'] .floating-action {
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 23, 42, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.4);
   box-shadow: 0 18px 32px rgba(0, 0, 0, 0.45);
 }
 

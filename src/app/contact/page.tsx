@@ -3,7 +3,7 @@
 import './contact.css';
 
 const formUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLSe_tHYpkMLOvwU5NZcS35bPc0nFOVLHk5Eg0YuQe779WcW8Hw/viewform?usp=sharing&ouid=109109604170305733892';
+  'https://docs.google.com/forms/d/e/1FAIpQLSc99Uh20hAO9mb2kyoRZGNzfSBRJLp_K4LdK9Vi1lknVRX_FA/viewform?usp=sharing&ouid=109109604170305733892';
 
 const contactChannels = [
   {

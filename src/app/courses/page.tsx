@@ -54,9 +54,15 @@ export default function CoursesPage() {
                 <Link href="/contact" className="btn btn--primary hero-cta">
                   Book a Counselling Call
                 </Link>
-                <Link href="/testimonials" className="btn hero-cta hero-cta--ghost">
-                  See Recent Rankers
-                </Link>
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSc99Uh20hAO9mb2kyoRZGNzfSBRJLp_K4LdK9Vi1lknVRX_FA/viewform?usp=sharing&ouid=109109604170305733892"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn--msat hero-cta"
+                  style={{ background: 'linear-gradient(135deg, #C41E3A 0%, #800000 100%)', color: '#fff' }}
+                >
+                  Apply for MSAT
+                </a>
               </div>
             </div>
 
@@ -76,76 +82,68 @@ export default function CoursesPage() {
       <section className="courses-sections">
         <div className="container">
           <div className="courses-sections__grid">
-          <div className="courses-assessment course-block course-block--assessment">
-            <div className="assessment-card">
-              <div className="assessment-eyebrow">Enrollment Process &amp; Assessment</div>
-              <h2>Diagnostic-first onboarding for Grade 11–12, JEE, NEET, and advanced courses.</h2>
-              <p className="assessment-lede">
-                Every serious learner begins with a quick diagnostic so we can place you in the right batch,
-                fix gaps early, and set clear goals from day one.
-              </p>
-              <div className="assessment-grid">
-                <div className="assessment-point">
-                  <span className="assessment-emoji" aria-hidden>🧠</span>
-                  <div>
-                    <strong>Assess conceptual readiness</strong>
-                    <p>Gauge strengths across core topics before the grind begins.</p>
+            <div className="courses-assessment course-block course-block--assessment">
+              <div className="assessment-card">
+                <div className="assessment-eyebrow">Enrollment Process &amp; Assessment</div>
+                <h2>Diagnostic-first onboarding for Grade 11–12, JEE, NEET, and advanced courses.</h2>
+                <p className="assessment-lede">
+                  Every serious learner begins with a quick diagnostic so we can place you in the right batch,
+                  fix gaps early, and set clear goals from day one.
+                </p>
+                <div className="assessment-grid">
+                  <div className="assessment-point">
+                    <span className="assessment-emoji" aria-hidden>🧠</span>
+                    <div>
+                      <strong>Assess conceptual readiness</strong>
+                      <p>Gauge strengths across core topics before the grind begins.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="assessment-point">
-                  <span className="assessment-emoji" aria-hidden>🛠️</span>
-                  <div>
-                    <strong>Identify gaps</strong>
-                    <p>Pinpoint the tricky areas so practice plans stay efficient.</p>
+                  <div className="assessment-point">
+                    <span className="assessment-emoji" aria-hidden>🛠️</span>
+                    <div>
+                      <strong>Identify gaps</strong>
+                      <p>Pinpoint the tricky areas so practice plans stay efficient.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="assessment-point">
-                  <span className="assessment-emoji" aria-hidden>📊</span>
-                  <div>
-                    <strong>Right batch, right pace</strong>
-                    <p>Join peers at a similar level for sharper discussions and growth.</p>
+                  <div className="assessment-point">
+                    <span className="assessment-emoji" aria-hidden>📊</span>
+                    <div>
+                      <strong>Right batch, right pace</strong>
+                      <p>Join peers at a similar level for sharper discussions and growth.</p>
+                    </div>
                   </div>
-                </div>
-                <div className="assessment-point">
-                  <span className="assessment-emoji" aria-hidden>🎯</span>
-                  <div>
-                    <strong>Clear expectations</strong>
-                    <p>Roadmaps and milestones from day one for a focused environment.</p>
+                  <div className="assessment-point">
+                    <span className="assessment-emoji" aria-hidden>🎯</span>
+                    <div>
+                      <strong>Clear expectations</strong>
+                      <p>Roadmaps and milestones from day one for a focused environment.</p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="course-visual course-block course-block--visual">
-            <img
-              src="/images/image_4.png"
-              alt="Students learning in a Re-Wise classroom"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
 
-          <div className="courses-offered course-block course-block--courses">
-            <div className="course-list-grid">
-              {courseCategories.map((cat) => (
-                <article key={cat.title} className={`course-list-card course-list-card--${cat.slug}`}>
-                  <h2>{cat.title}</h2>
-                  <ul>
-                    {cat.items.map((item, idx) => {
-                      const emoji = (emojiMap[cat.slug] || [])[idx % (emojiMap[cat.slug]?.length || 1)] || '✨'
-                      return (
-                        <li key={item}>
-                          <span className="course-emoji" aria-hidden>{emoji}</span>
-                          <span>{item}</span>
-                        </li>
-                      )
-                    })}
-                  </ul>
-                </article>
-              ))}
+            <div className="courses-offered course-block course-block--courses">
+              <div className="course-list-grid">
+                {courseCategories.map((cat) => (
+                  <article key={cat.title} className={`course-list-card course-list-card--${cat.slug}`}>
+                    <h2>{cat.title}</h2>
+                    <ul>
+                      {cat.items.map((item, idx) => {
+                        const emoji = (emojiMap[cat.slug] || [])[idx % (emojiMap[cat.slug]?.length || 1)] || '✨'
+                        return (
+                          <li key={item}>
+                            <span className="course-emoji" aria-hidden>{emoji}</span>
+                            <span>{item}</span>
+                          </li>
+                        )
+                      })}
+                    </ul>
+                  </article>
+                ))}
+              </div>
             </div>
-          </div>
           </div>
         </div>
       </section>

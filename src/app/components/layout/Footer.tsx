@@ -22,10 +22,10 @@ const Footer: React.FC = () => {
             <h4>Quick Links</h4>
             <ul className="footer-links">
               <li><Link href="/courses">Courses</Link></li>
-              <li><Link href="/our-students">Results</Link></li>
-              <li><Link href="/scholarship">Scholarship</Link></li>
+              
+              <li><Link href="/courses">Scholarship</Link></li>
               <li><Link href="/contact">Contact</Link></li>
-              <li><Link href="/philosophy">About Us</Link></li>
+
             </ul>
           </div>
 
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
           <div className="footer-section">
             <h4>Legal</h4>
             <ul className="footer-links">
-              <li><Link href="/terms">Terms & Conditions</Link></li>
+              {/* <li><Link href="/terms">Terms & Conditions</Link></li> */}
             </ul>
           </div>
 
@@ -52,8 +52,8 @@ const Footer: React.FC = () => {
               <p>📧 team.mentoraedutech@gmail.com</p>
               <p>📞 +91 9879581555</p>
               <p>401, Sigma Esquire, Above Domino's,<br></br>
-Kankaria, Maninagar,<br></br>
-Ahmedabad 380028
+                Kankaria, Maninagar,<br></br>
+                Ahmedabad 380028
               </p>
               <div className="footer-socials">
                 <a

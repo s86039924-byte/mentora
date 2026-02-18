@@ -524,13 +524,13 @@ html[data-theme='dark'] .courses-hero .hero-cta.btn--primary {
 
 .courses-sections__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: 1fr;
   gap: clamp(24px, 4vw, 48px);
   align-items: center;
   justify-items: center;
   grid-template-areas:
-    "assessment visual"
-    "courses courses";
+    "assessment"
+    "courses";
 }
 
 .course-block {
@@ -541,9 +541,6 @@ html[data-theme='dark'] .courses-hero .hero-cta.btn--primary {
   grid-area: assessment;
 }
 
-.course-block--visual {
-  grid-area: visual;
-}
 
 .course-block--courses {
   grid-area: courses;
@@ -556,27 +553,7 @@ html[data-theme='dark'] .courses-hero .hero-cta.btn--primary {
   max-width: 980px;
 }
 
-.course-visual {
-  display: grid;
-  place-items: center;
-  width: 100%;
-  max-width: 980px;
-}
 
-.course-visual img {
-  width: 100%;
-  max-width: 640px;
-  height: auto;
-  border-radius: 16px;
-  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.18);
-  background: rgba(255, 255, 255, 0.82);
-  padding: 14px;
-}
-
-html[data-theme='dark'] .course-visual img {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.38);
-  background: rgba(12, 19, 32, 0.9);
-}
 
 
 html[data-theme='dark'] .courses-hero {
@@ -754,7 +731,6 @@ html[data-theme='dark'] .dream-card p {
     grid-template-columns: 1fr;
     grid-template-areas:
       "assessment"
-      "visual"
       "courses";
     gap: 20px;
   }
