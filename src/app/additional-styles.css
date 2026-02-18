@@ -2,14 +2,8 @@
 
 
 
-.card {
-  background: var(--color-surface, #fff);
-  border-radius: 1rem;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.04);
-  border: 1px solid var(--color-card-border, #eee);
-  padding: 2rem;
-  margin-bottom: 2rem;
-}
+
+/* Removed redundant card styles already in globals.css */
 
 /* soft blobs – grow a bit, respect dark mode */
 .rw-bg-shape {
@@ -467,22 +461,8 @@ html[data-theme='dark'] .hero-benefits li {
   color: #f8fafc;
 }
 
-.hero-benefits {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1.75rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: .75rem 1.25rem;
-}
 
-.hero-benefits li {
-  display: flex;
-  gap: .75rem;
-  align-items: center;
-  font-weight: 600;
-  color: #0f172a;
-}
+/* Removed unused hero-benefits styles */
 
 .hero-benefits__bullet {
   width: 10px;
@@ -863,93 +843,28 @@ html[data-theme='dark'] .course-list-card--bio {
 }
 
 
-.card-icon {
-  font-size: 48px;
-  margin-bottom: 20px;
-  display: inline-block;
+
+/* Scrollbar styling - Modernized */
+::-webkit-scrollbar {
+  width: 10px;
 }
 
-
-.card-accent {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--primary, #0b1f3b), var(--secondary, #1f7a5a));
+::-webkit-scrollbar-track {
+  background: var(--color-background);
 }
 
-/* ========================================
-   ABOUT SECTION
-   ======================================== */
-
-
-
-
-/* ========================================
-   COURSES SECTION
-   ======================================== */
-
-
-
-
-@media (max-width: 768px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    grid-template-areas: none;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-  .feature-card,
-  .about-card,
-  .faculty-card,
-  .course-card,
-  .tab-button,
-  .btn-primary,
-  .btn-submit {
-    transition: none;
-  }
-}
-
-/* ========================================
-   MOTION INSTITUTE THEME - RED ENERGY
-   Updated globals.css colors:
-   - Primary: #C41E3A (Motion Red)
-   - Secondary: #0F1F3B (Dark Navy)
-   - Accent: #FFD700 (Gold)
-   ======================================== */
-
-:root {
-  --motion-red: #C41E3A;
-  --motion-gold: #FFD700;
-  --motion-navy: #0F1F3B;
-  --motion-dark-red: #A01830;
-}
-
-
-
-button,
-a,
-.tab-button,
-.btn-primary,
-.btn-submit {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-/* Scrollbar styling - Motion Red */
 ::-webkit-scrollbar-thumb {
-  background: var(--motion-red, #C41E3A) !important;
-  border-radius: 6px !important;
+  background: color-mix(in oklab, var(--color-primary), transparent 40%);
+  border-radius: 10px;
+  border: 2px solid var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--motion-dark-red, #A01830) !important;
+  background: var(--color-primary);
 }
 
 html[data-theme='dark'] ::-webkit-scrollbar-thumb {
-  background: var(--motion-gold, #FFD700) !important;
+  background: color-mix(in oklab, var(--color-primary), transparent 20%);
 }
 
-/* === END MOTION INSTITUTE THEME ==== */
+/* === END OF STYLES ==== */

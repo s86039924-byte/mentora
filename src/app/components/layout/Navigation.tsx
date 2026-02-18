@@ -4,6 +4,7 @@ import './Navigation.css'
 
 
 import { useCallback, useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import Image from 'next/image'
 import { LOGO } from '@/lib/constants'
@@ -25,9 +26,11 @@ const NAV_ITEMS: NavItem[] = [
 ]
 
 export default function Navigation() {
+  const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
+
 
   // Initialize theme from document
   useEffect(() => {
@@ -82,11 +85,14 @@ export default function Navigation() {
     }
   }
 
+  // Hide navbar on the Dost page (must be after all hooks)
+  if (pathname === '/dost') return null
+
   return (
     <>
       {/* Navigation Header */}
       <header data-nav className={`site-nav ${isScrolled ? 'scrolled' : ''}`}>
-        <div className="container nav-inner">
+        <div className="nav-inner">
           {/* Logo */}
           <div className="nav-brand">
             <Link href="/" onClick={closeMobileMenu}>
@@ -120,14 +126,22 @@ export default function Navigation() {
 
           {/* Right side controls */}
           <div className="nav-actions">
-            <Link
-              href="/dost"
-              className="nav-mobile-dost"
-              aria-label="Open Vidya Bhumi Dost"
-              onClick={closeMobileMenu}
-            >
+            {/* Dost Header Button (Mobile only) */}
+            <Link href="/dost" className="nav-dost-btn-header mobile-header-only">
               Dost
             </Link>
+
+            {/* Theme toggle */}
+            <div className="theme-toggle">
+              <button
+                onClick={handleThemeToggle}
+                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
+                type="button"
+              >
+                {theme === 'light' ? '🌙' : '☀️'}
+              </button>
+            </div>
+
             {/* Mobile menu toggle */}
             <button
               className={`mobile-toggle ${isMobileMenuOpen ? 'open' : ''}`}
@@ -140,17 +154,6 @@ export default function Navigation() {
               <span />
               <span />
             </button>
-
-            {/* Theme toggle */}
-            <div className="theme-toggle">
-              <button
-                onClick={handleThemeToggle}
-                aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-                type="button"
-              >
-                {theme === 'light' ? '🌙' : '☀️'}
-              </button>
-            </div>
           </div>
         </div>
       </header>
