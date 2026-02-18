@@ -350,7 +350,7 @@ html[data-theme="dark"] .nav-logo img {
 html[data-theme="dark"] .nav-brand img,
 html[data-theme="dark"] .nav-logo img,
 html[data-theme="dark"] .brand-logo {
-    filter: brightness(0) invert(1);
+    filter: brightness(2);
 }
 
 @media (max-width: 480px) {

@@ -15,7 +15,7 @@
     overflow: hidden;
     isolation: isolate;
     padding-block: 0 20px;
-    background: var(--bg-primary);
+    background: transparent;
     display: flex;
     align-items: flex-start;
     padding-top: 20px;
@@ -341,19 +341,13 @@ html[data-theme='dark'] .rw-hero::before {
 .rw-hero,
 .hero-section,
 .hero-shell {
-    background: linear-gradient(135deg,
-            var(--bg-secondary) 0%,
-            var(--bg-primary) 55%,
-            var(--bg-secondary) 100%);
+    background: transparent;
 }
 
 html[data-theme='dark'] .rw-hero,
 html[data-theme='dark'] .hero-section,
 html[data-theme='dark'] .hero-shell {
-    background: linear-gradient(135deg,
-            var(--bg-primary) 0%,
-            rgba(12, 20, 36, 0.92) 45%,
-            rgba(12, 20, 36, 0.78) 100%);
+    background: transparent;
 }
 
 .hero-ambient-lines {

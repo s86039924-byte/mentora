@@ -349,14 +349,20 @@ a {
 
 /* Strict Overflow Prevention for Backgrounds */
 .rw-bg-layer,
-.rw-bg-shape,
 .particles-container,
 #particles-js,
 .stem-overlay-container {
+  position: fixed;
+  inset: 0;
   width: 100% !important;
   max-width: 100vw !important;
   overflow: hidden !important;
   pointer-events: none;
+  z-index: -1;
+}
+
+.rw-bg-layer {
+  background: var(--bg-primary);
 }
 
 

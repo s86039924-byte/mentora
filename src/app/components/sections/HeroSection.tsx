@@ -182,8 +182,8 @@ export default function HeroSection() {
           <Image
             src="/logo/home.png"
             alt="Mentora Hero"
-            width={600}
-            height={600}
+            width={500}
+            height={400}
             className="hero-image"
             priority
           />
