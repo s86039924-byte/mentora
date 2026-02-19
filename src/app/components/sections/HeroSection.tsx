@@ -156,10 +156,7 @@ export default function HeroSection() {
               Apply for MSAT
               <span className="btn-glow-effect"></span>
             </a>
-            <a href="/courses" className="hero-cta-secondary">
-              Explore Courses
-              <span className="hero-cta-arrow">→</span>
-            </a>
+
           </motion.div>
 
 
