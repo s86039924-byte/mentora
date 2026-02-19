@@ -316,22 +316,26 @@ html[data-theme='dark'] .faculty-tagline-text {
     gap: 10px;
     font-size: 1rem;
     font-weight: 600;
-    color: #FFD700;
-    background: rgba(255, 215, 0, 0.08);
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    color: #c41e3a;
+    background: rgba(196, 30, 58, 0.07);
+    border: 1px solid rgba(196, 30, 58, 0.22);
     border-radius: 999px;
     padding: 10px 20px;
 }
 
 .faculty-stat-icon {
-    color: #FFD700;
+    color: #d4a017;
     flex-shrink: 0;
 }
 
 html[data-theme='dark'] .faculty-stat-item {
-    color: #FFD700;
-    background: rgba(255, 215, 0, 0.1);
-    border-color: rgba(255, 215, 0, 0.25);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+html[data-theme='dark'] .faculty-stat-icon {
+    color: #fbbf24;
 }
 
 /* From line 3246-3320 in additional-styles.css */
