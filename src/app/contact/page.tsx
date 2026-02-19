@@ -28,7 +28,7 @@ const contactChannels = [
     title: 'Email Us',
     description:
       'Send documents, counselling requests or collaboration ideas and we will respond within 24 hours.',
-    action: { label: 'Email us (coming soon)', href: '#' },
+    action: { label: 'team.mentoraedutech@gmail.com', href: 'mailto:team.mentoraedutech@gmail.com' },
     meta: 'Attach student details, class and preferred programme.',
   },
 ];
@@ -81,8 +81,9 @@ export default function ContactPage() {
             <h3>Visit the campus</h3>
             <p>
               MENTORA<br />
-              402, Sigma Esquire, Kankaria,<br />
-              Maninagar, Ahmedabad.
+              401, Sigma Esquire, Above Domino's,<br />
+              Kankaria, Maninagar,<br />
+              Ahmedabad 380028
             </p>
             <p className="contact-phones">7569235450 | 9328386289</p>
           </div>

@@ -32,6 +32,33 @@
     justify-content: flex-start;
 }
 
+/* Achievement Stats */
+.hero-stats-container {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.hero-stat-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #4A4A4A;
+}
+
+.hero-stat-icon {
+    color: #FFD700;
+    /* Winning icon color */
+    flex-shrink: 0;
+}
+
+html[data-theme='dark'] .hero-stat-item {
+    color: #dce4f4;
+}
+
 .hero-msat-btn {
     position: relative;
     display: inline-flex;
@@ -465,7 +492,7 @@ html[data-theme='dark'] .hero-section .panel {
 
 .hero-title__brand {
     display: inline-block;
-    background-image: linear-gradient(#800000);
+    background-image: linear-gradient(135deg, #800000 0%, #C41E3A 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;

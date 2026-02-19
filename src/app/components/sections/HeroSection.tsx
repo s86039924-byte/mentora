@@ -4,6 +4,7 @@ import './HeroSection.css';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { Trophy } from 'lucide-react';
 import { LOGO } from '@/lib/constants';
 
 type HeroFormData = {
@@ -134,29 +135,26 @@ export default function HeroSection() {
           initial="hidden"
           animate="visible"
         >
-          <motion.div
-            className="hero-logo-container"
-            variants={titleVariants}
-          >
-            <Image
-              src={LOGO}
-              alt="Mentora Logo"
-              width={120}
-              height={120}
-              className="hero-logo"
-              priority
-              quality={100}
-              unoptimized
-            />
-          </motion.div>
+
 
           <motion.h1 id="hero-heading" className="hero-heading hero-title--inline" variants={titleVariants}>
             <span className="hero-title__brand">MENTORA</span>
-            <span className="hero-title__tagline">Proven track record of Faculty</span>
+            <span className="hero-title__tagline">Where dreams find true mentor</span>
             <span className="hero-title__highlight">
               A premier institute for IIT-JEE and NEET.
             </span>
           </motion.h1>
+
+          <motion.div className="hero-stats-container" variants={bodyVariants}>
+            <div className="hero-stat-item">
+              <Trophy className="hero-stat-icon" size={24} />
+              <span>100+ Students placed in IITs & NITs</span>
+            </div>
+            <div className="hero-stat-item">
+              <Trophy className="hero-stat-icon" size={24} />
+              <span>250+ Students in Govt. Medical Colleges</span>
+            </div>
+          </motion.div>
 
           <motion.div className="hero-cta-container" variants={bodyVariants}>
             <a

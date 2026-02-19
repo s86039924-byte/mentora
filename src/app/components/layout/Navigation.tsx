@@ -20,6 +20,7 @@ const NAV_ITEMS: NavItem[] = [
   { label: 'Courses', href: '/courses' },
   { label: 'Dost', href: '/dost', variant: 'dost' },
   { label: 'Faculty', href: '/#faculty' },
+  { label: 'Results', href: '/#results' },
   { label: 'Testimonials', href: '/testimonials' },
   { label: 'Gallery', href: '/#gallery' },
   { label: 'Contact', href: '/contact' },
@@ -98,7 +99,7 @@ export default function Navigation() {
             <Link href="/" onClick={closeMobileMenu}>
               <Image
                 src={LOGO}
-                alt="Vidya Bhumi Logo"
+                alt="Mentora Logo"
                 width={140}
                 height={140}
                 priority

@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             <h4>Quick Links</h4>
             <ul className="footer-links">
               <li><Link href="/courses">Courses</Link></li>
-              
+
               <li><Link href="/courses">Scholarship</Link></li>
               <li><Link href="/contact">Contact</Link></li>
 

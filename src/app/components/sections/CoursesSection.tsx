@@ -57,7 +57,7 @@ export default function CoursesSection() {
               className={`course-card course-card--image course-card--${program.slug}`}
               variants={cardVariants}
             >
-              <div className="course-number">{index + 1}</div>
+
               <h3 className="course-level">{program.title}</h3>
               <p className="course-desc">{program.subtitle}</p>
               <div className="course-accent"></div>

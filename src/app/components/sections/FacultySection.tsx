@@ -141,7 +141,14 @@ export default function FacultySection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-100px' }}
         >
-          {allFaculty.map((teacher, index) => (
+          {[
+            facultyRoster.neet.find(f => f.name === 'Preet Jain'),
+            facultyRoster.jee.find(f => f.name === 'Tarun Garg'),
+            facultyRoster.jee.find(f => f.name === 'Rajkumar Somani'),
+            facultyRoster.neet.find(f => f.name === 'Satyam Goyal'),
+            facultyRoster.neet.find(f => f.name === 'Deepak Prakash'),
+            facultyRoster.jee.find(f => f.name === 'Anmol Bhandari')
+          ].map((teacher, index) => teacher && (
             <motion.div
               key={`faculty-${index}`}
               className="faculty-card"
@@ -167,6 +174,18 @@ export default function FacultySection() {
             </motion.div>
           ))}
         </motion.div>
+
+        <motion.div
+          className="faculty-footer-tagline"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          style={{ textAlign: 'center', marginTop: '3rem' }}
+        >
+          <p style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--text-color)' }}>Proven track record of faculty</p>
+        </motion.div>
+
         {isModalOpen && selectedFaculty && (
           <div
             className="faculty-modal-backdrop"
