@@ -139,7 +139,7 @@ export default function HeroSection() {
 
           <motion.h1 id="hero-heading" className="hero-heading hero-title--inline" variants={titleVariants}>
             <span className="hero-title__brand">MENTORA</span>
-            <span className="hero-title__tagline">Where dreams find true mentor</span>
+            <span className="hero-title__tagline">Where dreams find true mentors</span>
             <span className="hero-title__highlight">
               A premier institute for IIT-JEE and NEET.
             </span>
@@ -148,7 +148,7 @@ export default function HeroSection() {
 
           <motion.div className="hero-cta-container" variants={bodyVariants}>
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSc99Uh20hAO9mb2kyoRZGNzfSBRJLp_K4LdK9Vi1lknVRX_FA/viewform?usp=sharing&ouid=109109604170305733892"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScNGtsGGTM2wrsMblMsIW54Bo8zUlZyvIJaxwaVqltjwIW1CQ/viewform?usp=header"
               target="_blank"
               rel="noreferrer"
               className="hero-msat-btn"

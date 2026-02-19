@@ -43,8 +43,8 @@ const Footer: React.FC = () => {
             <div className="footer-section">
               <h4>Quick Links</h4>
               <ul className="footer-links">
-                <li><Link href="/courses">Courses</Link></li>
-                <li><Link href="/courses">Scholarship</Link></li>
+                <li><Link href="/#courses">Courses</Link></li>
+                <li><Link href="/#courses">Scholarship</Link></li>
                 <li><Link href="/contact">Contact</Link></li>
               </ul>
             </div>
@@ -52,10 +52,10 @@ const Footer: React.FC = () => {
             <div className="footer-section">
               <h4>Courses</h4>
               <ul className="footer-links">
-                <li><Link href="/courses">Foundation</Link></li>
-                <li><Link href="/courses">Olympiad</Link></li>
-                <li><Link href="/courses">NEET</Link></li>
-                <li><Link href="/courses">IIT-JEE</Link></li>
+                <li><Link href="/#courses">Foundation</Link></li>
+                <li><Link href="/#courses">Olympiad</Link></li>
+                <li><Link href="/#courses">NEET</Link></li>
+                <li><Link href="/#courses">IIT-JEE</Link></li>
               </ul>
             </div>
 
@@ -68,8 +68,8 @@ const Footer: React.FC = () => {
                   </a>
                 </p>
                 <p>
-                  <a href="tel:+919879581555">
-                    📞 +91 9879581555
+                  <a href="tel:+917569235450">
+                    📞 +91 7569235450
                   </a>
                 </p>
                 <p>

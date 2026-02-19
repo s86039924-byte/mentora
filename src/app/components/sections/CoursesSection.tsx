@@ -6,7 +6,7 @@ import './CoursesSection.css';
 
 
 const assessmentFormUrl =
-  'https://docs.google.com/forms/d/e/1FAIpQLSc99Uh20hAO9mb2kyoRZGNzfSBRJLp_K4LdK9Vi1lknVRX_FA/viewform?usp=sharing&ouid=109109604170305733892';
+  'https://docs.google.com/forms/d/e/1FAIpQLScNGtsGGTM2wrsMblMsIW54Bo8zUlZyvIJaxwaVqltjwIW1CQ/viewform?usp=header';
 
 const programs = [
   { slug: 'ignite', title: 'Ignite Program', subtitle: 'For class IX', badge: 'Foundation' },
@@ -78,7 +78,7 @@ export default function CoursesSection() {
           <p>Not sure which course is right for you?</p>
           <a
             className="btn-primary"
-            href="https://docs.google.com/forms/d/e/1FAIpQLSc99Uh20hAO9mb2kyoRZGNzfSBRJLp_K4LdK9Vi1lknVRX_FA/viewform?usp=sharing&ouid=109109604170305733892"
+            href="https://docs.google.com/forms/d/e/1FAIpQLScNGtsGGTM2wrsMblMsIW54Bo8zUlZyvIJaxwaVqltjwIW1CQ/viewform?usp=header"
             target="_blank"
             rel="noreferrer"
           >

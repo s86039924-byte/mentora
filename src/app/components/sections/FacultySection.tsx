@@ -160,9 +160,6 @@ export default function FacultySection() {
                 <img className="faculty-card__photo" src={teacher.image} alt={teacher.name} loading="lazy" />
               </div>
               <div className="faculty-card__body">
-                <span className={`faculty-badge ${facultyRoster.jee.includes(teacher) ? 'faculty-badge--jee' : 'faculty-badge--neet'}`}>
-                  {facultyRoster.jee.includes(teacher) ? 'JEE' : 'NEET'}
-                </span>
                 <h3 className="faculty-card__name">{teacher.name}</h3>
                 <div className="faculty-accent"></div>
                 <p className="faculty-card__role">{teacher.subject}</p>
