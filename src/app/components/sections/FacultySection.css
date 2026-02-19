@@ -302,6 +302,38 @@ html[data-theme='dark'] .faculty-tagline-text {
     margin-top: 3rem;
 }
 
+.faculty-stats-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+
+.faculty-stat-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFD700;
+    background: rgba(255, 215, 0, 0.08);
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    border-radius: 999px;
+    padding: 10px 20px;
+}
+
+.faculty-stat-icon {
+    color: #FFD700;
+    flex-shrink: 0;
+}
+
+html[data-theme='dark'] .faculty-stat-item {
+    color: #FFD700;
+    background: rgba(255, 215, 0, 0.1);
+    border-color: rgba(255, 215, 0, 0.25);
+}
+
 /* From line 3246-3320 in additional-styles.css */
 .faculty-section {
     padding: 80px 0;

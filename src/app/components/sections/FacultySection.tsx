@@ -3,6 +3,7 @@
 import './FacultySection.css';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Trophy } from 'lucide-react';
 
 type FacultyMember = {
   name: string;
@@ -186,6 +187,16 @@ export default function FacultySection() {
           viewport={{ once: true }}
         >
           <p className="faculty-tagline-text">Proven track record of faculty</p>
+          <div className="faculty-stats-row">
+            <div className="faculty-stat-item">
+              <Trophy className="faculty-stat-icon" size={24} />
+              <span>100+ Students placed in IITs &amp; NITs</span>
+            </div>
+            <div className="faculty-stat-item">
+              <Trophy className="faculty-stat-icon" size={24} />
+              <span>250+ Students in Govt. Medical Colleges</span>
+            </div>
+          </div>
         </motion.div>
 
         {isModalOpen && selectedFaculty && (

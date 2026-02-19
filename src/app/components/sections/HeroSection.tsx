@@ -145,16 +145,6 @@ export default function HeroSection() {
             </span>
           </motion.h1>
 
-          <motion.div className="hero-stats-container" variants={bodyVariants}>
-            <div className="hero-stat-item">
-              <Trophy className="hero-stat-icon" size={24} />
-              <span>100+ Students placed in IITs & NITs</span>
-            </div>
-            <div className="hero-stat-item">
-              <Trophy className="hero-stat-icon" size={24} />
-              <span>250+ Students in Govt. Medical Colleges</span>
-            </div>
-          </motion.div>
 
           <motion.div className="hero-cta-container" variants={bodyVariants}>
             <a
