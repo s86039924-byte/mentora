@@ -1,21 +1,14 @@
 .courses-grid {
     display: grid;
-    gap: 32px;
+    gap: 28px;
     padding: clamp(40px, 6vw, 72px) 0;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    justify-items: center;
-}
-
-/* Last odd card centered */
-.course-card:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    max-width: 380px;
-    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
 }
 
 @media (min-width: 900px) {
-    .course-card:last-child:nth-child(odd) {
-        max-width: 480px;
+    .courses-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 }
 
@@ -29,14 +22,16 @@
     display: flex;
     flex-direction: column;
     gap: .7rem;
-    min-height: 260px;
+    min-height: 300px;
+    height: 100%;
     position: relative;
     overflow: hidden;
     transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
     color: #0f172a;
     isolation: isolate;
-    background-size: 100% !important;
+    background-size: cover !important;
     background-repeat: no-repeat !important;
+    background-position: center !important;
 }
 
 .course-card:hover {

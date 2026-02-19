@@ -13,7 +13,7 @@ const programs = [
   { slug: 'catalyst', title: 'Catalyst Program', subtitle: 'For class X', badge: 'Foundation' },
   { slug: 'pinnacle-rise', title: 'Pinnacle-Rise Program', subtitle: 'For class XI', badge: 'JEE / NEET' },
   { slug: 'pinnacle-apex', title: 'Pinnacle-Apex Program', subtitle: 'For class XII', badge: 'JEE / NEET' },
-  { slug: 'phoenix', title: 'Phoenix Program', subtitle: 'For reappearing students', badge: 'Advanced' },
+  { slug: 'phoenix', title: 'Phoenix Program', subtitle: 'For reappearing students', badge: 'JEE / NEET' },
 ];
 
 const containerVariants = {
