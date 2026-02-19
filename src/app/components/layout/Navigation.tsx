@@ -117,6 +117,7 @@ export default function Navigation() {
                     href={item.href}
                     className={item.variant === 'dost' ? 'nav-dost-link' : undefined}
                     onClick={closeMobileMenu}
+                    {...(pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href.split('#')[0])) ? { 'data-active': true } : {})}
                   >
                     {item.label}
                   </Link>

@@ -4,7 +4,7 @@
 .gallery {
     background: rgba(255, 255, 255, 0.85);
     backdrop-filter: saturate(130%);
-    padding-block: 80px 60px;
+    padding-block: 60px 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,12 +89,16 @@ html[data-theme='dark'] .gallery {
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(11, 31, 59, 0.15);
     color: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-size 0.4s ease;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .gallery-card-simple:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.01);
     box-shadow: 0 20px 45px rgba(11, 31, 59, 0.25);
+    background-size: 110%;
 }
 
 .gallery-card-simple::after {

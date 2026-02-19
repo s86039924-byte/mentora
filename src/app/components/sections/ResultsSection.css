@@ -31,27 +31,47 @@
 .results-toggle {
     display: flex;
     justify-content: center;
-    gap: 16px;
+    gap: 0;
     margin-bottom: 48px;
+    background: var(--bg-accent, #eef2f7);
+    border-radius: 999px;
+    padding: 4px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .toggle-btn {
-    padding: 12px 32px;
-    border-radius: 99px;
+    padding: 12px 36px;
+    border-radius: 999px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    border: 2px solid #e2e8f0;
-    background: #fff;
+    border: none;
+    background: transparent;
     color: #64748b;
+    position: relative;
+    z-index: 1;
 }
 
 .toggle-btn.active {
-    background: #c41e3a;
-    border-color: #c41e3a;
+    background: var(--primary, #c41e3a);
     color: #fff;
-    box-shadow: 0 8px 20px rgba(196, 30, 58, 0.25);
+    box-shadow: 0 8px 20px rgba(196, 30, 58, 0.3);
+}
+
+html[data-theme='dark'] .results-toggle {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+html[data-theme='dark'] .toggle-btn {
+    color: #94a3b8;
+}
+
+html[data-theme='dark'] .toggle-btn.active {
+    background: var(--primary, #c41e3a);
+    color: #fff;
 }
 
 .results-grid {
@@ -63,13 +83,19 @@
 }
 
 .result-card {
-    background: #fff;
-    border: 2px solid #ff0000;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(196, 30, 58, 0.12);
     border-radius: 20px;
-    padding: 24px;
+    padding: 32px;
     position: relative;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    backdrop-filter: blur(8px);
+}
+
+.result-card:hover {
+    box-shadow: 0 16px 40px rgba(196, 30, 58, 0.14);
+    border-color: rgba(196, 30, 58, 0.25);
 }
 
 .result-card__header {
@@ -109,9 +135,15 @@
 .result-divider {
     height: 3px;
     width: 40px;
-    background: #ff0000;
+    background: linear-gradient(90deg, var(--primary, #C41E3A), var(--accent, #FFD700));
     border-radius: 99px;
     margin-bottom: 16px;
+}
+
+/* Medal icons for top results */
+.result-medal {
+    font-size: 1.4rem;
+    margin-bottom: 4px;
 }
 
 .result-stat {
@@ -147,7 +179,7 @@
 }
 
 html[data-theme='dark'] .results-section {
-    background: #080f1c;
+    background: rgba(8, 15, 28, 0.85);
 }
 
 html[data-theme='dark'] .toggle-btn {

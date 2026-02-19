@@ -28,15 +28,18 @@ html[data-theme="dark"] {
 }
 
 :root {
-  /* Design system palette - MOTION INSTITUTE INSPIRED */
+  /* Design system palette - MENTORA */
   --primary: #C41E3A;
-  /* Motion Deep Red */
   --secondary: #0F1F3B;
-  /* Dark Navy */
   --accent: #FFD700;
-  /* Gold Premium */
   --light-bg: #F8F9FA;
   --dark-bg: linear-gradient(135deg, #0F1F3B, #1a2f4a);
+
+  /* Gallery card colors */
+  --gallery-pink: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --gallery-blue: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --gallery-amber: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  --gallery-cyan: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
 
   /* Premium, energetic palette (light) */
   --bg-primary: #F8F9FA;
@@ -49,13 +52,30 @@ html[data-theme="dark"] {
   --btn-hover: #A01830;
   --btn-text: #ffffff;
 
+  /* Card system tokens */
   --card-shadow: rgba(196, 30, 58, 0.08);
+  --card-border: rgba(196, 30, 58, 0.18);
+  --card-radius: 20px;
+  --card-padding: clamp(20px, 2.5vw, 32px);
 
   --text-primary: #0F1F3B;
   --text-muted: #4b5563;
 
+  /* Typography scale */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 2rem;
+  --text-4xl: clamp(2rem, 4vw, 3rem);
+
   --border-color: #d6deeb;
   --surface-radius: 12px;
+
+  /* Scroll progress fix */
+  --color-cream-50: #FFD700;
 }
 
 html[data-theme='dark'] {
@@ -251,6 +271,11 @@ a {
 
 .section {
   padding: clamp(60px, 10vw, 100px) 0;
+  scroll-margin-top: calc(var(--nav-height, 72px) + 20px);
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--nav-height, 72px) + 20px);
 }
 
 .btn {
@@ -314,11 +339,68 @@ a {
 
 
 .title-underline {
-  width: 72px;
-  height: 2px;
-  margin: 10px auto 0 auto;
-  background: var(--color-primary);
+  width: clamp(60px, 10vw, 120px);
+  height: 3px;
+  margin: 12px auto 0 auto;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
   border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+/* Section divider decoration */
+.section-divider {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.section-divider::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(to bottom right, transparent 49.5%, var(--bg-primary) 50%);
+}
+
+/* Back to Top button */
+.back-to-top {
+  position: fixed;
+  bottom: 90px;
+  right: 24px;
+  width: 48px;
+  height: 48px;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 500;
+  box-shadow: 0 8px 24px rgba(196, 30, 58, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.back-to-top:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(196, 30, 58, 0.5);
+}
+
+.back-to-top:active {
+  transform: scale(0.95);
 }
 
 /* Align all section headings with the testimonials style */

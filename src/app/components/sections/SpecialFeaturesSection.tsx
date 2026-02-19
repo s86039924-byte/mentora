@@ -34,19 +34,19 @@ const containerVariants = {
   },
 }
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
+const cardVariants = (index: number) => ({
+  hidden: { opacity: 0, x: index % 2 === 0 ? -30 : 30, y: 15 },
   visible: {
     opacity: 1,
+    x: 0,
     y: 0,
     transition: { duration: 0.6 },
   },
   hover: {
     y: -8,
-    boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
     transition: { duration: 0.3 },
   },
-}
+})
 
 export default function SpecialFeaturesSection() {
   return (
@@ -97,10 +97,10 @@ export default function SpecialFeaturesSection() {
             <motion.div
               key={feature.title}
               className="feature-card"
-              variants={cardVariants}
+              variants={cardVariants(index)}
               whileHover="hover"
             >
-
+              <div className="feature-card-badge">{String(index + 1).padStart(2, '0')}</div>
               <h3>{feature.title}</h3>
               <p>{feature.description}</p>
             </motion.div>
@@ -114,8 +114,10 @@ export default function SpecialFeaturesSection() {
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true, margin: '-100px' }}
         >
-          <p style={{ color: '#800000', fontSize: '2rem', textAlign: 'center' }}>This is not factory-style education.</p>
-          <p style={{ color: '#800000', fontSize: '2rem', textAlign: 'center' }}>This is precision coaching designed around each student.</p>
+          <div className="special-conclusion-quote">
+            <p>This is not factory-style education.</p>
+            <p>This is precision coaching designed around each student.</p>
+          </div>
         </motion.div>
       </div>
     </section>

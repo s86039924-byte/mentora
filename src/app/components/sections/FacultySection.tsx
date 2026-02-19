@@ -159,6 +159,9 @@ export default function FacultySection() {
                 <img className="faculty-card__photo" src={teacher.image} alt={teacher.name} loading="lazy" />
               </div>
               <div className="faculty-card__body">
+                <span className={`faculty-badge ${facultyRoster.jee.includes(teacher) ? 'faculty-badge--jee' : 'faculty-badge--neet'}`}>
+                  {facultyRoster.jee.includes(teacher) ? 'JEE' : 'NEET'}
+                </span>
                 <h3 className="faculty-card__name">{teacher.name}</h3>
                 <div className="faculty-accent"></div>
                 <p className="faculty-card__role">{teacher.subject}</p>
@@ -181,9 +184,8 @@ export default function FacultySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
-          style={{ textAlign: 'center', marginTop: '3rem' }}
         >
-          <p style={{ fontSize: '1.25rem', fontWeight: 'bold', color: 'var(--text-color)' }}>Proven track record of faculty</p>
+          <p className="faculty-tagline-text">Proven track record of faculty</p>
         </motion.div>
 
         {isModalOpen && selectedFaculty && (
@@ -196,6 +198,11 @@ export default function FacultySection() {
           >
             <div className="faculty-modal" onClick={(event) => event.stopPropagation()}>
               <div className="faculty-modal__header">
+                <img
+                  src={selectedFaculty.image}
+                  alt={selectedFaculty.name}
+                  className="faculty-modal__photo"
+                />
                 <div>
                   <h3>{selectedFaculty.name}</h3>
                   <p>{selectedFaculty.subject}</p>

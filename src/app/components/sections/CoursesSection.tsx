@@ -9,11 +9,11 @@ const assessmentFormUrl =
   'https://docs.google.com/forms/d/e/1FAIpQLSc99Uh20hAO9mb2kyoRZGNzfSBRJLp_K4LdK9Vi1lknVRX_FA/viewform?usp=sharing&ouid=109109604170305733892';
 
 const programs = [
-  { slug: 'ignite', title: 'Ignite Program', subtitle: 'For class IX' },
-  { slug: 'catalyst', title: 'Catalyst Program', subtitle: 'For class X' },
-  { slug: 'pinnacle-rise', title: 'Pinnacle-Rise Program', subtitle: 'For class XI' },
-  { slug: 'pinnacle-apex', title: 'Pinnacle-Apex Program', subtitle: 'For class XII' },
-  { slug: 'phoenix', title: 'Phoenix Program', subtitle: 'For reappearing students' },
+  { slug: 'ignite', title: 'Ignite Program', subtitle: 'For class IX', badge: 'Foundation' },
+  { slug: 'catalyst', title: 'Catalyst Program', subtitle: 'For class X', badge: 'Foundation' },
+  { slug: 'pinnacle-rise', title: 'Pinnacle-Rise Program', subtitle: 'For class XI', badge: 'JEE / NEET' },
+  { slug: 'pinnacle-apex', title: 'Pinnacle-Apex Program', subtitle: 'For class XII', badge: 'JEE / NEET' },
+  { slug: 'phoenix', title: 'Phoenix Program', subtitle: 'For reappearing students', badge: 'Advanced' },
 ];
 
 const containerVariants = {
@@ -57,10 +57,13 @@ export default function CoursesSection() {
               className={`course-card course-card--image course-card--${program.slug}`}
               variants={cardVariants}
             >
-
+              <span className="course-badge">{program.badge}</span>
               <h3 className="course-level">{program.title}</h3>
               <p className="course-desc">{program.subtitle}</p>
               <div className="course-accent"></div>
+              <a href={assessmentFormUrl} target="_blank" rel="noreferrer" className="course-learn-more">
+                Learn More →
+              </a>
             </motion.div>
           ))}
         </motion.div>

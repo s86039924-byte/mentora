@@ -85,10 +85,33 @@ html[data-theme="dark"] .site-nav.scrolled {
     font-size: 15px;
     text-decoration: none;
     transition: color 0.2s ease;
+    position: relative;
+    padding-bottom: 4px;
+}
+
+.rw-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 999px;
+    transition: width 0.3s ease;
+}
+
+.rw-menu a:hover::after,
+.rw-menu a[data-active]::after {
+    width: 100%;
 }
 
 .rw-menu a:hover {
     color: var(--color-primary);
+}
+
+.rw-menu a[data-active] {
+    color: var(--primary);
 }
 
 .nav-brand img,
@@ -117,6 +140,27 @@ html[data-theme="dark"] .nav-logo img {
     display: flex;
     align-items: center;
     gap: var(--space-16);
+}
+
+/* Theme toggle button */
+.theme-toggle button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--bg-accent);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.theme-toggle button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
 /* Mobile Toggle Hamburger */
@@ -413,6 +457,15 @@ html[data-theme="dark"] .brand-logo {
     font-weight: 600;
     color: var(--text-primary);
     text-decoration: none;
+    display: block;
+    padding: 12px 0;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.mobile-menu-link:hover {
+    color: var(--primary);
+    padding-left: 8px;
 }
 
 .mobile-menu-backdrop {
@@ -432,9 +485,33 @@ html[data-theme="dark"] .brand-logo {
     position: absolute;
     top: 20px;
     right: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
+    background: var(--bg-accent);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
     color: var(--text-primary);
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.mobile-menu-close:hover {
+    background: rgba(196, 30, 58, 0.1);
+    transform: rotate(90deg);
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
 }

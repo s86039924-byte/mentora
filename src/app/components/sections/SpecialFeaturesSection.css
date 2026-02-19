@@ -73,23 +73,52 @@ html[data-theme='dark'] .special-features-section .section-header p {
 
 .feature-card {
     background: white;
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 32px;
-    min-height: 150px;
+    min-height: 200px;
     box-shadow: 0 4px 24px rgba(11, 31, 59, 0.08);
-    border: 2px solid #ff0000;
+    border: 1px solid rgba(196, 30, 58, 0.12);
+    border-top: 4px solid transparent;
+    border-image: linear-gradient(135deg, var(--primary, #C41E3A), var(--accent, #FFD700)) 1 0 0 0;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
 }
 
 .feature-card:hover {
-    box-shadow: 0 12px 48px rgba(11, 31, 59, 0.15);
+    box-shadow: 0 20px 50px rgba(196, 30, 58, 0.18);
+    transform: scale(1.02) translateY(-4px);
+    border-color: rgba(196, 30, 58, 0.25);
 }
 
 html[data-theme='dark'] .feature-card {
     background: #1a2f4a;
-    border-color: #ff0000;
+    border-color: rgba(196, 30, 58, 0.2);
+}
+
+html[data-theme='dark'] .feature-card:hover {
+    box-shadow: 0 20px 50px rgba(196, 30, 58, 0.25);
+}
+
+/* Feature card numbered badge */
+.feature-card-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(255, 215, 0, 0.1));
+    color: var(--primary, #C41E3A);
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 16px;
+    border: 1px solid rgba(196, 30, 58, 0.15);
+}
+
+html[data-theme='dark'] .feature-card-badge {
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.2), rgba(255, 215, 0, 0.1));
+    color: #fda787;
 }
 
 .card-number {
@@ -128,8 +157,9 @@ html[data-theme='dark'] .card-number {
     }
 
     .special-image img {
-        width: min(100%, 640px);
-        max-height: 420px;
+        width: min(100%, 900px);
+        max-height: 500px;
+        object-fit: cover;
     }
 
     .features-grid {
@@ -138,7 +168,51 @@ html[data-theme='dark'] .card-number {
     }
 
     .special-conclusion {
-        margin-top: 0;
-        text-align: left;
+        margin-top: 48px;
+        text-align: center;
     }
+}
+
+/* Special conclusion quote style */
+.special-conclusion-quote {
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.05), rgba(255, 215, 0, 0.05));
+    border-left: 4px solid linear-gradient(180deg, var(--primary), var(--accent));
+    border-left: 4px solid var(--primary, #C41E3A);
+    border-radius: 0 16px 16px 0;
+    padding: 24px 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.special-conclusion-quote::before {
+    content: '\"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 5rem;
+    color: rgba(196, 30, 58, 0.15);
+    font-family: Georgia, serif;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.special-conclusion-quote p {
+    color: #800000;
+    font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+    font-weight: 700;
+    line-height: 1.5;
+    margin: 0 0 8px;
+}
+
+.special-conclusion-quote p:last-child {
+    margin: 0;
+}
+
+html[data-theme='dark'] .special-conclusion-quote {
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.1), rgba(255, 215, 0, 0.08));
+}
+
+html[data-theme='dark'] .special-conclusion-quote p {
+    color: #fda787;
 }

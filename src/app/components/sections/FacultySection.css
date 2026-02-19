@@ -4,7 +4,7 @@
 .faculty-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
+    gap: 32px;
     max-width: 1000px;
     margin: 18px auto 36px;
 }
@@ -36,16 +36,78 @@
     border: 1px solid rgba(15, 23, 42, 0.2);
     color: #0f172a;
     font-size: 0.75rem;
-    padding: 6px 12px;
+    padding: 6px 14px;
     border-radius: 999px;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+    font-weight: 600;
+}
+
+.faculty-card__cta::after {
+    content: '→';
+    transition: transform 0.2s ease;
+}
+
+.faculty-card__cta:hover::after {
+    transform: translateX(4px);
 }
 
 .faculty-card__cta:hover {
     transform: translateY(-2px);
-    background: #ffffff;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+    background: var(--primary, #C41E3A);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 10px 24px rgba(196, 30, 58, 0.3);
+}
+
+/* Faculty subject badge */
+.faculty-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+    align-self: center;
+}
+
+.faculty-badge--jee {
+    background: rgba(37, 99, 235, 0.1);
+    color: #2563eb;
+    border: 1px solid rgba(37, 99, 235, 0.2);
+}
+
+.faculty-badge--neet {
+    background: rgba(22, 163, 74, 0.1);
+    color: #16a34a;
+    border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.faculty-badge--foundation {
+    background: rgba(124, 58, 237, 0.1);
+    color: #7c3aed;
+    border: 1px solid rgba(124, 58, 237, 0.2);
+}
+
+html[data-theme='dark'] .faculty-badge--jee {
+    background: rgba(37, 99, 235, 0.2);
+    color: #93c5fd;
+}
+
+html[data-theme='dark'] .faculty-badge--neet {
+    background: rgba(22, 163, 74, 0.2);
+    color: #86efac;
+}
+
+html[data-theme='dark'] .faculty-badge--foundation {
+    background: rgba(124, 58, 237, 0.2);
+    color: #c4b5fd;
 }
 
 html[data-theme='dark'] .faculty-card__cta {
@@ -62,7 +124,7 @@ html[data-theme='dark'] .faculty-card__cta:hover {
 
 html[data-theme='dark'] .faculty-card {
     background: radial-gradient(circle at top left, #111827, #020617);
-    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.5);
 }
 
 .faculty-card::before {
@@ -93,11 +155,11 @@ html[data-theme='dark'] .faculty-card:hover {
 
 .faculty-card__photo {
     width: 100%;
-    height: 320px;
-    object-fit: contain;
-    object-position: center;
+    height: 280px;
+    object-fit: cover;
+    object-position: center top;
     display: block;
-    background: #ffffff;
+    background: #f1f5f9;
 }
 
 .faculty-card__body {
@@ -155,9 +217,23 @@ html[data-theme='dark'] .faculty-card__role {
 
 .faculty-modal__header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 12px;
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.08), rgba(255, 215, 0, 0.05));
+    border-radius: 16px;
+    padding: 16px;
+    margin: -4px -4px 0;
+}
+
+/* Faculty modal photo */
+.faculty-modal__photo {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center top;
+    border: 3px solid rgba(196, 30, 58, 0.2);
+    flex-shrink: 0;
 }
 
 .faculty-modal__header h3 {
@@ -202,8 +278,28 @@ html[data-theme='dark'] .faculty-modal__description {
     color: rgba(248, 250, 252, 0.9);
 }
 
-html[data-theme='dark'] .faculty-modal__close {
-    color: rgba(248, 250, 252, 0.8);
+/* Faculty tagline text */
+.faculty-tagline-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary, #0f172a);
+    text-align: center;
+    background: linear-gradient(135deg, rgba(196, 30, 58, 0.05), rgba(255, 215, 0, 0.05));
+    border: 1px solid rgba(196, 30, 58, 0.12);
+    border-radius: 12px;
+    padding: 16px 32px;
+    display: inline-block;
+}
+
+html[data-theme='dark'] .faculty-tagline-text {
+    color: #e9ecf7;
+    background: rgba(196, 30, 58, 0.1);
+    border-color: rgba(196, 30, 58, 0.2);
+}
+
+.faculty-footer-tagline {
+    text-align: center;
+    margin-top: 3rem;
 }
 
 /* From line 3246-3320 in additional-styles.css */

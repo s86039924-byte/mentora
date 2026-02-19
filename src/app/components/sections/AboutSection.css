@@ -22,12 +22,16 @@ html[data-theme='dark'] .about-section {
 .about-header h2 {
     font-size: clamp(32px, 3.5vw, 48px);
     font-weight: 800;
-    color: #C41E3A !important;
-    margin-bottom: 12px;
+    color: var(--primary, #C41E3A);
+    margin-bottom: 16px;
+}
+
+.about-header .title-underline {
+    width: clamp(60px, 10vw, 120px);
 }
 
 html[data-theme='dark'] .about-header h2 {
-    color: #C41E3A !important;
+    color: #C41E3A;
 }
 
 .header-underline {
