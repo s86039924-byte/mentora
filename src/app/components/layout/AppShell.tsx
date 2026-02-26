@@ -1,6 +1,7 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 
 import Navigation from './Navigation'
@@ -19,6 +20,19 @@ function isDostPath(pathname: string) {
 export default function AppShell({ children }: { children: ReactNode }) {
   const pathname = usePathname()
   const hideGlobalChrome = isDostPath(pathname || '')
+
+  useEffect(() => {
+    const root = document.documentElement
+    const body = document.body
+
+    root.classList.toggle('dost-embed-mode', hideGlobalChrome)
+    body.classList.toggle('dost-embed-mode', hideGlobalChrome)
+
+    return () => {
+      root.classList.remove('dost-embed-mode')
+      body.classList.remove('dost-embed-mode')
+    }
+  }, [hideGlobalChrome])
 
   if (hideGlobalChrome) {
     return <main className="page page--dost">{children}</main>

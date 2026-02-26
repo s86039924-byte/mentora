@@ -563,6 +563,28 @@ section[id] {
   padding-right: 0 !important;
 }
 
+/* Strict mode for /dost embed page: disable site-level visual effects */
+html.dost-embed-mode,
+body.dost-embed-mode {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+html.dost-embed-mode::before,
+html.dost-embed-mode::after,
+body.dost-embed-mode::before,
+body.dost-embed-mode::after {
+  content: none !important;
+  animation: none !important;
+  background: none !important;
+}
+
+html.dost-embed-mode .page.page--dost {
+  margin: 0 !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
 /* If you use section-level .container inside the page, keep it aligned */
 .page > .container {
   padding-left: 0;      /* rely on the page gutters */
