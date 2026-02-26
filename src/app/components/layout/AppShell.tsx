@@ -27,6 +27,9 @@ export default function AppShell({ children }: { children: ReactNode }) {
 
     root.classList.toggle('dost-embed-mode', hideGlobalChrome)
     body.classList.toggle('dost-embed-mode', hideGlobalChrome)
+    if (hideGlobalChrome) {
+      window.scrollTo(0, 0)
+    }
 
     return () => {
       root.classList.remove('dost-embed-mode')

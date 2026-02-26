@@ -557,15 +557,20 @@ section[id] {
 }
 
 .page.page--dost {
-  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100dvh;
   padding-top: 0 !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  overflow: hidden !important;
 }
 
 /* Strict mode for /dost embed page: disable site-level visual effects */
 html.dost-embed-mode,
 body.dost-embed-mode {
+  height: 100%;
+  padding-top: 0 !important;
+  overflow: hidden !important;
   background: transparent !important;
   background-image: none !important;
 }

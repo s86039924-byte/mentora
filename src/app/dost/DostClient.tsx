@@ -175,14 +175,15 @@ export default function DostClient() {
           margin: 0;
           padding: 0;
           width: 100%;
-          height: 100vh;
+          height: 100dvh;
           font-family: Arial, sans-serif;
+          overflow: hidden;
         }
 
         .frame {
           border: none;
           width: 100%;
-          height: 100%;
+          height: 100dvh;
           display: block;
         }
 
@@ -263,5 +264,4 @@ export default function DostClient() {
         </div>
     );
 }
-
 
