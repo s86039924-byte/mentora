@@ -2,14 +2,7 @@ import { Inter, Montserrat } from 'next/font/google'
 import './globals.css'
 import './additional-styles.css'
 
-import Navigation from './components/layout/Navigation'
-import ScrollProgress from './components/animations/ScrollProgress'
-import ParticlesBackground from './components/animations/ParticlesBackground'
-import VantaBackground from './components/animations/VantaBackground'
-import StemOverlay from './components/animations/StemOverlay'
-import ScrollManager from './components/layout/ScrollManager'
-import FloatingContactActions from './components/layout/FloatingContactActions'
-import Footer from './components/layout/Footer'
+import AppShell from './components/layout/AppShell'
 
 import Script from 'next/script'
 
@@ -67,18 +60,7 @@ export default function RootLayout({
       </head>
 
       <body className={`${inter.className} ${montserrat.variable}`}>
-        <ScrollManager />
-        <ScrollProgress />
-        <VantaBackground />
-        <ParticlesBackground />
-        <StemOverlay />
-        <div className="page-grid-overlay" aria-hidden="true" />
-
-        <Navigation />
-
-        <main className="page">{children}</main>
-        <FloatingContactActions />
-        <Footer />
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   )
