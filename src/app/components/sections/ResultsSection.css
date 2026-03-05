@@ -74,7 +74,7 @@ html[data-theme='dark'] .toggle-btn.active {
     color: #fff;
 }
 
-.results-grid {
+.results-section .results-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 24px;
@@ -82,7 +82,7 @@ html[data-theme='dark'] .toggle-btn.active {
     margin: 0 auto;
 }
 
-.result-card {
+.results-section .result-card {
     background: rgba(255, 255, 255, 0.9);
     border: 1px solid rgba(196, 30, 58, 0.12);
     border-radius: 20px;
@@ -91,21 +91,31 @@ html[data-theme='dark'] .toggle-btn.active {
     transition: all 0.3s ease;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
     backdrop-filter: blur(8px);
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    display: block;
+    overflow: hidden;
 }
 
-.result-card:hover {
+/* Reset generic global result-card pseudo element for this section */
+.results-section .result-card::before {
+    content: none;
+}
+
+.results-section .result-card:hover {
     box-shadow: 0 16px 40px rgba(196, 30, 58, 0.14);
     border-color: rgba(196, 30, 58, 0.25);
 }
 
-.result-card__header {
+.results-section .result-card__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
 }
 
-.result-icon-bg {
+.results-section .result-icon-bg {
     width: 48px;
     height: 48px;
     background: linear-gradient(135deg, #ffd700 0%, #f97316 100%);
@@ -116,7 +126,7 @@ html[data-theme='dark'] .toggle-btn.active {
     color: #fff;
 }
 
-.result-year {
+.results-section .result-year {
     font-size: 0.9rem;
     font-weight: 700;
     color: #94a3b8;
@@ -125,14 +135,14 @@ html[data-theme='dark'] .toggle-btn.active {
     border-radius: 99px;
 }
 
-.result-card__content h3 {
+.results-section .result-card__content h3 {
     font-size: 1.25rem;
     font-weight: 800;
     color: #0f172a;
     margin: 0 0 8px 0;
 }
 
-.result-divider {
+.results-section .result-divider {
     height: 3px;
     width: 40px;
     background: linear-gradient(90deg, var(--primary, #C41E3A), var(--accent, #FFD700));
@@ -141,35 +151,35 @@ html[data-theme='dark'] .toggle-btn.active {
 }
 
 /* Medal icons for top results */
-.result-medal {
+.results-section .result-medal {
     font-size: 1.4rem;
     margin-bottom: 4px;
 }
 
-.result-stat {
+.results-section .result-stat {
     display: flex;
     align-items: center;
     gap: 8px;
     margin-bottom: 4px;
 }
 
-.stat-icon {
+.results-section .stat-icon {
     color: #f97316;
 }
 
-.stat-label {
+.results-section .stat-label {
     font-size: 0.9rem;
     font-weight: 600;
     color: #64748b;
 }
 
-.stat-value {
+.results-section .stat-value {
     font-size: 1.1rem;
     font-weight: 800;
     color: #c41e3a;
 }
 
-.result-college {
+.results-section .result-college {
     font-size: 0.9rem;
     font-weight: 600;
     color: #1e293b;
@@ -194,25 +204,25 @@ html[data-theme='dark'] .toggle-btn.active {
     color: #fff;
 }
 
-html[data-theme='dark'] .result-card {
+html[data-theme='dark'] .results-section .result-card {
     background: #111d2f;
     border-color: #ff0000;
 }
 
-html[data-theme='dark'] .result-card__content h3 {
+html[data-theme='dark'] .results-section .result-card__content h3 {
     color: #f8fafc;
 }
 
-html[data-theme='dark'] .result-year {
+html[data-theme='dark'] .results-section .result-year {
     background: rgba(255, 255, 255, 0.1);
     color: #e2e8f0;
 }
 
-html[data-theme='dark'] .stat-label {
+html[data-theme='dark'] .results-section .stat-label {
     color: #94a3b8;
 }
 
-html[data-theme='dark'] .result-college {
+html[data-theme='dark'] .results-section .result-college {
     color: #cbd5e1;
     border-top-color: rgba(255, 255, 255, 0.1);
 }
